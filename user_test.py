@@ -53,10 +53,32 @@ class TestUser(unittest.TestCase):
         test_delete_user to test if we can remove a user from our user list
         '''
         self.new_user.save_user()
-        test_user = User("Test","user","12345","test@user.com")
+        test_user = User("adan","ali","manka","8888")
         test_user.save_user()
         self.new_user.delete_user()    
         self.assertEqual(len(User.user_list),1)
-    
+
+    def test_find_user_by_user_name(self):
+        '''
+        Test to check if we can find a user by their username and display their details"
+        '''
+        self.new_user.save_user()
+        test_user = User("abdi", "yusuf", "abdi", "ngeshy")
+        test_user.save_user()
+
+        find_user = User.find_by_user_name("abdi")
+
+        self.assertEqual(find_user.password, test_user.password)
+    def test_user_exists(self):
+        '''
+        test to check if we can return a boolean if we can not find the user.
+        '''
+        self.new_user.save_user()
+        test_user = User("khalo","nana","khalid","rkelly")
+        test_user.save_user()
+
+        user_exists = User.user_exist("khalid")
+        self.assertTrue(user_exists)   
+
 if __name__ == '__main__':
     unittest.main()    
