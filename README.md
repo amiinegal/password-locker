@@ -1,4 +1,4 @@
-`## password-locker
+## password-locker
 This project was generated with `Python3.6`
 
 ### Author
