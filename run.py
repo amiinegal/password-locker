@@ -1,7 +1,9 @@
 #!/usr/bin/env python3.6
+
 from credentials import Credentials
 import pyperclip
 from user import User
+
 
 def create_credentials(account_name,password):
     '''
@@ -41,35 +43,66 @@ def main():
             print("Hello Welcome . What is your account name?")
             account_name = input()
 
-            print(f"Hello {account_name}. what would you like to do?")
+            print("Hello {}. what would you like to do?".format(account_name))
             print('\n')
             
-            while True:
-                print("Welcome to PassWord Locker app.")
-                print('\n')
-                print("Use these short codes to select an option:  Create New account: 'cc'  Login to your account:'log'  To exit password locker: 'ex'")
-                break
-            short_code = input().lower()
+           
+            print("Welcome to PassWord Locker app.")
+            print('\n')
+                
+            short_code = input("Use these short codes to select an option:  Create New account: 'cc'  Login to your account:'log' dc - display user,  To exit password locker: 'ex'")
+
             print('\n')
             if short_code == 'cc':
-                print("Create an account")
-            created_account_name = input()
-            print("Select a Password")
-            created_account_password = input()
-            print("Confirm Your Password")
-            confirm_password = input()
-
-            while confirm_password != created_account_password:
-                print("Sorry this passwords does'nt exist!")
-                print("Enter a password")
-                created_user_password = input()
-                print("Confirm Your Password")
-                confirm_password = input()
-            else:
-                print(f"Congratulations {created_account_name}! You have created your new account.")
-                print('\n')
-                    
+                
+                while True:
+                    print("Create an account")
+                    created_account_name = input(">Enter name:  ")
             
+                    created_account_password = input(">Enter a password:  ")
+                
+                    confirm_password = input("Confirm Your Password")
+
+                    if confirm_password != created_account_password:
+                        print("Sorry this passwords does'nt exist!")
+                        continue
+                    else:
+                        print("Congratulations {}! You have created your new account.".format(created_account_name))
+                        break
+                        
+
+
+            elif  short_code == 'log':
+                print('/n')
+                print("account_name")
+                default_account_name =input()
+                print('/n')
+                print("password")
+                default_password = input()
+                print('/n')
+
+            elif  short_code == 'ex':
+                print('/n')
+                print("account_name")
+                default_account_name =input()
+                print('/n')
+                print("password")
+                default_password = input()
+                print('/n')
+                #sys.exit()    
+            elif short_code == 'dc':
+                    if display_credentials():
+                        print("displaying account name")
+                        print('\n')
+                    for credentials in display_credentials():
+                        print(f"{credentials.account_name} {credentials.password}")
+                        print('\n')
+
+            else:
+                        print('\n')
+                        print("you don't seem to have any account")
+                        print('\n')     
+
 
 if __name__ == '__main__':
      main()                    
