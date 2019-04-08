@@ -38,7 +38,7 @@ def display_credentials():
     return Credentials.credentials_exist(account_name) 
 
 def main():
-            print("Hello Welcome to your credentials  list. What is your account name?")
+            print("Hello Welcome . What is your account name?")
             account_name = input()
 
             print(f"Hello {account_name}. what would you like to do?")
@@ -68,6 +68,7 @@ def main():
             else:
                 print(f"Congratulations {created_account_name}! You have created your new account.")
                 print('\n')
+                    
             
 
 if __name__ == '__main__':
