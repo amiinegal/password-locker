@@ -19,7 +19,7 @@ On your github account, search `amiinegal/password-locker.` To fork the applicat
 | Go to the `terminal` and run the run.py file  |displays an instructions and short `keywords` that takes a specific input and then you type in the various keywords you are given   |
 
 #### contacts
-Email `amiinegal34@gmail.com` slack username `Amin Adan` ;
+Email `amiinegal34@gmail.com` slack username `Amin Adan` phone number `072638916` ;
 
 ### Licensing
 #### MIT License
