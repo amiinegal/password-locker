@@ -47,7 +47,7 @@ def main():
             while True:
                 print("Welcome to PassWord Locker app.")
                 print('\n')
-                print("Use these short codes to select an option: \n Create New account: 'cc' \n Login to your account:'log' \n To exit password locker: 'ex'")
+                print("Use these short codes to select an option:  Create New account: 'cc'  Login to your account:'log'  To exit password locker: 'ex'")
                 break
             short_code = input().lower()
             print('\n')
@@ -68,7 +68,7 @@ def main():
             else:
                 print(f"Congratulations {created_account_name}! You have created your new account.")
                 print('\n')
-        
+            
 
 if __name__ == '__main__':
      main()                    
