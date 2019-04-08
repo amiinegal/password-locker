@@ -35,4 +35,35 @@ def display_credentials():
     '''
     Function that check if a user exist with that account name and return a boolean
     '''
-    return Credentials.credentials_exist(account_name)    
+    return Credentials.credentials_exist(account_name) 
+
+def main():
+        while True:
+                print("Welcome to PassWord Locker app.")
+                print('\n')
+                print("Use these short codes to select an option: Create New account 'cc': Login to your account use 'log' or 'ex' to exit password locker")
+
+        short_code = input().lower()
+        print('\n')
+        if short_code == 'cc':
+            print("Create an account")
+            created_account_name = input()
+            print("Select a Password")
+            created_account_password = input()
+            print("Confirm Your Password")
+            confirm_password = input()
+
+            while confirm_password != created_user_password:
+                print("Sorry this passwords does'nt exist!")
+                print("Enter a password")
+                created_user_password = input()
+                print("Confirm Your Password")
+                confirm_password = input()
+            else:
+                print(f"Congratulations {created_account_name}! You have created your new account.")
+                print('\n')
+
+
+if __name__ == '__main__':
+    
+    main()                    
