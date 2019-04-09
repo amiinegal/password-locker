@@ -3,6 +3,8 @@
 from credentials import Credentials
 import pyperclip
 from user import User
+import string
+import random
 
 
 def create_credentials(account_name,password):
@@ -16,6 +18,14 @@ def save_credentials(credentials):
     Function to save a credentials
     '''
     credentials.save_credentials()
+
+def generate_password(generate_password):
+    '''
+    Function to generate a password randomly
+    '''
+
+    gen_pass = Credential.generate_password()
+    return gen_pass    
 
 def del_credentials(credentials):
     '''
@@ -50,7 +60,7 @@ def main():
             print("Welcome to PassWord Locker app.")
             print('\n')
                 
-            short_code = input("Use these short codes to select an option:  Create New account: 'cc'  Login to your account:'log' dc - display user,  To exit password locker: 'ex'")
+            short_code = input("Use these short codes to select an option:  Create New account: 'cc'  Login to your account:'log' dc - display user,  To exit password locker: 'ex' 'g' generate password")
 
             print('\n')
             if short_code == 'cc':
@@ -69,7 +79,12 @@ def main():
                     else:
                         print("Congratulations {}! You have created your new account.".format(created_account_name))
                         break
-                        
+                    
+                    if short_code == 'g':
+                        print('\n')
+                        print("generate_password")
+                        default_generate_password = input()
+                        print('\n')                   
 
 
             elif  short_code == 'log':

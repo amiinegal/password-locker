@@ -1,3 +1,8 @@
+import random
+import string
+from user import User
+
+
 class Credentials:
     '''
     Class that generates new instances of the credentials.
@@ -8,6 +13,15 @@ class Credentials:
         save_user method saves contact objects into credential_list
         '''
         Credentials.credential_list.append(self)
+
+    
+    def generate_password(stringlength=10):
+        '''
+        method that generates a random password
+        '''
+        letters = string.ascii_letters + string.digits
+        gen_pass = ''.join(random.choice(letters) for i in range (stringlength))
+        return gen_pass    
 
     def delete_credentials(self):
         '''
